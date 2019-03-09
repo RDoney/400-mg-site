@@ -1,13 +1,10 @@
 ---
 title: Home
-header: |-
-  Erat ut Sapien, mus curae, morbi dictum duis
-  aenean auctor at Dictum.
+header: The podcast about Caffeine
 template: home
 menus:
   main:
-    weight: 1
     title: Home
+    weight: 1
 ---
-
-Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.
+Caffeine is the world's most widely consumed psychoactive drug. Unlike many other psychoactive substances, it is legal and unregulated in nearly all parts of the world. Join Ryan and John as they explore the ways that people choose to get their morning buzz.

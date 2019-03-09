@@ -1,9 +1,9 @@
 ---
-title: Ipsum
-home_style: style2
+title: 'Ep 4: Neuro Bliss'
+home_style: style4
 home_img: images/pic07.jpg
 excerpt: Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.
-date: '2017-04-06'
+date: 2019-02-04T06:00:00.000Z
 img_src: images/pic13.jpg
 template: page
 ---

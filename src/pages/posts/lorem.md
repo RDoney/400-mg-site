@@ -1,9 +1,9 @@
 ---
-title: Lorem
-home_style: style2
+title: 'Ep 5: Grindz Pouches'
+home_style: style5
 home_img: images/pic02.jpg
 excerpt: Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.
-date: '2017-04-11'
+date: 2019-02-05T06:00:00.000Z
 img_src: images/pic13.jpg
 template: page
 ---

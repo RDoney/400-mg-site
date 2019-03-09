@@ -1,9 +1,9 @@
 ---
-title: Dictum
-home_style: style6
+title: 'Ep 1: Rockstar Zero Carb'
+home_style: style1
 home_img: images/pic11.jpg
 excerpt: Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.
-date: '2017-04-02'
+date: 2019-02-01T06:00:00.000Z
 img_src: images/pic13.jpg
 template: page
 ---

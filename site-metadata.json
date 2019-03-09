@@ -1,7 +1,7 @@
 {
   "title": "400mg",
   "header": {
-    "logo_img_src": "images/logo.svg"
+    "logo_img_src": "/images/400mg.png"
   },
   "contact": {
     "enabled": false,

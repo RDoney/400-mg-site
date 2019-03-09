@@ -1,0 +1,373 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: static/images
+public_folder: /images
+collections:
+  - name: config
+    label: Config
+    files:
+      - name: config
+        label: Config
+        file: site-metadata.json
+        fields:
+          - widget: string
+            name: title
+            label: Title
+            required: true
+            hint: Site title
+          - widget: object
+            name: header
+            label: Header Configuration
+            required: false
+            fields:
+              - widget: image
+                name: logo_img_src
+                label: Header Logo
+                required: false
+                hint: The logo displayed On the upper left side of the page header
+          - widget: object
+            name: contact
+            label: Contact Section Configuration
+            required: false
+            fields:
+              - widget: boolean
+                name: enabled
+                label: Enabled
+                required: false
+                default: false
+                hint: Displays the section in the site footer
+              - widget: string
+                name: title
+                label: Section Title
+                required: false
+          - widget: object
+            name: social
+            label: Social Section Configuration
+            required: false
+            fields:
+              - widget: boolean
+                name: enabled
+                label: Enabled
+                required: false
+                default: false
+              - widget: string
+                name: title
+                label: Section Title
+                required: false
+              - widget: list
+                name: follow_section
+                label: Social Media Icons
+                required: false
+                hint: A list of social media icons
+                fields:
+                  - widget: string
+                    name: title
+                    label: Icon Title
+                    required: true
+                  - widget: string
+                    name: icon
+                    label: Icon
+                    required: true
+                    hint: Font Awesome Icon
+                  - widget: string
+                    name: link_url
+                    label: URL
+                    required: false
+          - widget: hidden
+            name: type
+            label: Reference Type Name
+            required: false
+            default: config
+            hint: Name of the object model if it was referenced
+  - name: home
+    label: Home
+    files:
+      - name: home
+        label: Home
+        file: src/pages/index.md
+        fields:
+          - widget: string
+            name: title
+            label: Page Title
+            required: true
+          - widget: text
+            name: header
+            label: Page Header
+            required: false
+            hint: The bold text displayed at the top of the page
+          - widget: hidden
+            name: template
+            label: Template
+            required: true
+            default: home
+          - widget: object
+            name: menus
+            label: Home Menus
+            required: false
+            hint: Which menus should this page show up in
+            fields:
+              - widget: object
+                name: main
+                label: Main menu item
+                required: false
+                hint: Main menu item for this page
+                fields:
+                  - widget: string
+                    name: title
+                    label: Title
+                    required: false
+                    hint: The title of the menu item
+                  - widget: number
+                    name: weight
+                    label: Weight
+                    required: false
+                    hint: Position for sorting
+                    valueType: int
+                  - widget: hidden
+                    name: type
+                    label: Reference Type Name
+                    required: false
+                    default: page_menu_item
+                    hint: Name of the object model if it was referenced
+              - widget: hidden
+                name: type
+                label: Reference Type Name
+                required: false
+                default: page_menus
+                hint: Name of the object model if it was referenced
+          - widget: markdown
+            name: body
+            label: Content
+            required: false
+            hint: Page content
+          - widget: hidden
+            name: type
+            label: Reference Type Name
+            required: false
+            default: home
+            hint: Name of the object model if it was referenced
+  - name: page
+    label: Pages
+    folder: src/pages/
+    filter:
+      field: template
+      value: page
+    create: true
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - widget: string
+        name: title
+        label: Page Title
+        required: true
+      - widget: image
+        name: img_src
+        label: Content Image
+        required: false
+        hint: The Image displayed in the content section of the page
+      - widget: hidden
+        name: template
+        label: Template
+        required: true
+        default: page
+      - widget: object
+        name: menus
+        label: Page Menus
+        required: false
+        hint: Which menus should this page show up in
+        fields:
+          - widget: object
+            name: main
+            label: Main menu item
+            required: false
+            hint: Main menu item for this page
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the menu item
+              - widget: number
+                name: weight
+                label: Weight
+                required: false
+                hint: Position for sorting
+                valueType: int
+              - widget: hidden
+                name: type
+                label: Reference Type Name
+                required: false
+                default: page_menu_item
+                hint: Name of the object model if it was referenced
+          - widget: hidden
+            name: type
+            label: Reference Type Name
+            required: false
+            default: page_menus
+            hint: Name of the object model if it was referenced
+      - widget: markdown
+        name: body
+        label: Content
+        required: false
+        hint: Page content
+      - widget: hidden
+        name: type
+        label: Reference Type Name
+        required: false
+        default: page
+        hint: Name of the object model if it was referenced
+  - name: post
+    label: Posts
+    folder: src/pages/posts
+    filter:
+      field: template
+      value: page
+    create: true
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - widget: string
+        name: title
+        label: Page Title
+        required: true
+      - widget: select
+        name: home_style
+        label: Home Thumbnail Style
+        required: true
+        hint: The style used for the home thumbnail
+        options:
+          - style1
+          - style2
+          - style3
+          - style4
+          - style5
+          - style6
+          - style7
+      - widget: image
+        name: home_img
+        label: Home Thumbnail Image
+        required: false
+        hint: The Image displayed in the home thumbnail on hover
+      - widget: markdown
+        name: excerpt
+        label: Excerpt
+        required: false
+        hint: The text displayed in the home thumbnail on hover
+      - widget: date
+        name: date
+        label: Post Date
+        required: true
+      - widget: image
+        name: img_src
+        label: Content Image
+        required: false
+        hint: The Image displayed in the content section of the page
+      - widget: hidden
+        name: template
+        label: Template
+        required: true
+        default: post
+      - widget: object
+        name: menus
+        label: Post Menus
+        required: false
+        hint: Which menus should this page show up in
+        fields:
+          - widget: object
+            name: main
+            label: Main menu item
+            required: false
+            hint: Main menu item for this page
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the menu item
+              - widget: number
+                name: weight
+                label: Weight
+                required: false
+                hint: Position for sorting
+                valueType: int
+              - widget: hidden
+                name: type
+                label: Reference Type Name
+                required: false
+                default: page_menu_item
+                hint: Name of the object model if it was referenced
+          - widget: hidden
+            name: type
+            label: Reference Type Name
+            required: false
+            default: page_menus
+            hint: Name of the object model if it was referenced
+      - widget: markdown
+        name: body
+        label: Content
+        required: false
+        hint: Page content
+      - widget: hidden
+        name: type
+        label: Reference Type Name
+        required: false
+        default: post
+        hint: Name of the object model if it was referenced
+  - name: elements
+    label: Elements
+    files:
+      - name: elements
+        label: Elements
+        file: src/pages/elements.md
+        fields:
+          - widget: string
+            name: title
+            label: Page Title
+            required: true
+          - widget: hidden
+            name: template
+            label: Template
+            required: true
+            default: elements
+          - widget: object
+            name: menus
+            label: Elements Menus
+            required: false
+            hint: Which menus should this page show up in
+            fields:
+              - widget: object
+                name: main
+                label: Main menu item
+                required: false
+                hint: Main menu item for this page
+                fields:
+                  - widget: string
+                    name: title
+                    label: Title
+                    required: false
+                    hint: The title of the menu item
+                  - widget: number
+                    name: weight
+                    label: Weight
+                    required: false
+                    hint: Position for sorting
+                    valueType: int
+                  - widget: hidden
+                    name: type
+                    label: Reference Type Name
+                    required: false
+                    default: page_menu_item
+                    hint: Name of the object model if it was referenced
+              - widget: hidden
+                name: type
+                label: Reference Type Name
+                required: false
+                default: page_menus
+                hint: Name of the object model if it was referenced
+          - widget: hidden
+            name: type
+            label: Reference Type Name
+            required: false
+            default: elements
+            hint: Name of the object model if it was referenced

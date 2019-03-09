@@ -1,9 +1,9 @@
 ---
-title: Feugiat
-home_style: style3
+title: 'Ep 3: Mountain Dew Game Fuel'
+home_style: style2
 home_img: images/pic03.jpg
 excerpt: Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.
-date: '2017-04-10'
+date: 2019-02-03T06:00:00.000Z
 img_src: images/pic13.jpg
 template: page
 ---

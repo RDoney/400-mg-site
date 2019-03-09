@@ -1,9 +1,9 @@
 ---
-title: Dolor
-home_style: style3
+title: 'Ep 2: Starbucks RTD Lineup'
+home_style: style2
 home_img: images/pic08.jpg
 excerpt: Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.
-date: '2017-04-05'
+date: 2019-02-02T06:00:00.000Z
 img_src: images/pic13.jpg
 template: page
 ---
